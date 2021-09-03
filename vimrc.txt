@@ -1,0 +1,55 @@
+set nocompatible              " required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" add all your plugins here (note older versions of Vundle
+" used Bundle instead of Plugin)
+
+" ...
+
+set runtimepath^=~/.vim/bundle/lightline.vim
+Plugin 'itchyny/lightline.vim'
+set laststatus=2
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+inoremap <C-k> <C-n>
+
+highlight Pmenu ctermfg=white ctermbg=gray
+highlight PmenuSel ctermfg=white ctermbg=DarkRed
+
+nnoremap m $
+nnoremap z 0
+
+set expandtab
+set tabstop=4 "dimensiune tab
+set shiftwidth=4 "dimesiune autoindent
+set autoindent
+set nu "show number line
+syntax on
+set splitright
+set splitbelow
+
+inoremap {  {}<Left>
+inoremap (  ()<Left>
+inoremap [  []<left>
+inoremap "  ""<left>
+inoremap '  ''<left>
+
+inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
+inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
+
+inoremap {<cr> {<cr>}<c-o>O<tab>
+inoremap [<cr> [<cr>]<c-o>O<tab>
+inoremap (<cr> (<cr>)<c-o>O<tab>
