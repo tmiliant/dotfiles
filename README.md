@@ -1,1 +1,1 @@
-Some dot files, to easily restore customized stuff when the case.
+For restoring customized stuff when needed.
